@@ -544,6 +544,7 @@ with zipfile.ZipFile(zip_out, "w", zipfile.ZIP_DEFLATED) as zf:
             full = os.path.join(root, file)
             rel = os.path.relpath(full, os.path.dirname(base))
             zf.write(full, rel)
-shutil.copy2(zip_out, os.path.join(SKILL_DIR, "Motion_Graphics_Master_Draft.zip"))
+if os.path.abspath(SKILL_DIR) != os.path.abspath(ARTIFACT_DIR):
+    shutil.copy2(zip_out, os.path.join(SKILL_DIR, "Motion_Graphics_Master_Draft.zip"))
 print("Created portable ZIP:", zip_out)
 

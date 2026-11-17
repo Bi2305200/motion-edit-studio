@@ -67,7 +67,7 @@ CUES = [
     # Scene 4 số liệu: tick theo bộ đếm, success ở CTA
     ("click", 11.50, 0.5), ("tick", 11.65, 0.35), ("tick", 11.80, 0.35), ("tick", 11.95, 0.35),
     ("tick", 12.10, 0.35), ("tick", 12.25, 0.35), ("tick", 12.40, 0.35),
-    ("success", 11.95, 0.55), ("sparkle", 13.6, 0.45),
+    ("success", 11.95, 0.55), ("cta_snap", 13.75, 0.55),
 ]
 BGM = ("bgm_cat_walk.mp3", 14.5, 0.50)    # file, giây bắt đầu (drop), âm lượng (tự duck dưới giọng)
 DURATION = 15.0
