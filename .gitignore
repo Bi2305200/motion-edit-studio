@@ -9,6 +9,11 @@ out
 # secrets & heavy outputs
 .env
 out/
+build/
+.remotion_bundle/
 public/audio/raw_*
+public/audio/horror_master_audio.wav
+story/audio_stems/
+story/horror_master_audio.wav
 __pycache__/
 *.zip

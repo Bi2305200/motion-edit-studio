@@ -34,6 +34,17 @@ copy .env.example .env      # rồi mở .env và dán ELEVENLABS_API_KEY của 
 - **Logo thương hiệu SVG:** `python fetch_brand_svg.py tiktok spotify ...`
 - **Quy tắc cho AI agent:** `skill/SKILL.md`. Copy file này vào `~/.gemini/antigravity/skills/motion-video-graphics/` để agent dùng lại.
 
+## 3.5. Quy trình dự án truyện kinh dị dài (`HorrorStory` - 9 cảnh, 218.9s)
+
+File voiceover `story/vo/p0..p8.mp3` & timestamp `story/vo/*.align.json` đã được lưu sẵn trong repo (không tốn lại credit ElevenLabs khi mở trên máy khác).
+
+```powershell
+python story/build_story_timeline.py   # Tạo story/timeline.json & src/storyTimeline.ts
+python story/build_horror_audio.py     # Mix lại master audio + 3 stems WAV (VO, Drone, SFX)
+node story/render_horror.mjs --full    # Render raw MP4 1080x1920 @ 30fps -> out/horror_story_raw.mp4
+python story/package_horror.py         # Mux audio + xuất CapCut Draft 4 track (Phong_Tro_1tr5_TikTok)
+```
+
 ## 4. Lưu ý
 
 - **Không commit file `.env`** vì nó chứa API key. File này đã nằm trong `.gitignore`.
